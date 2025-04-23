@@ -1,0 +1,162 @@
+:root {
+    --transition: all 0.3s ease-in-out;
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+section, footer {
+    height: 100vh;
+    padding: 4rem 0;
+}
+
+section {
+    position: relative;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 1px;
+    background-color: black;
+    opacity: .5;
+}
+
+main {
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    width: 95%;
+    margin: auto;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navbar-block__logo a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-block__menu {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-block__menu a {
+    padding: 7px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.navbar-block__menu a::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.navbar-block__menu a:nth-child(1):before {
+    content: "\f007";
+}
+
+.navbar-block__menu a:nth-child(2):before {
+    content: "\f19d";
+}
+
+.navbar-block__menu a:nth-child(3):before {
+    content: "\f07c";
+}
+
+.navbar-block__menu a:nth-child(4):before {
+    content: "\3f";
+}
+
+.navbar-block__menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: black;
+    transition: var(--transition);
+}
+
+.navbar-block__menu a:hover::after {
+    width: 100%;
+    transition: var(--transition);
+}
+
+.navbar-block__socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.navbar-block__socials a {
+    text-decoration: none;
+    padding: 7px;
+    color: black;
+    position: relative;
+}
+
+.navbar-block__socials a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: black;
+    transition: var(--transition);
+}
+
+.navbar-block__socials a:hover::after {
+    width: 100%;
+    transition: var(--transition);
+}
+
+.about-me-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-me-block__desc {
+    width: 50%;
+}
+
+.about-me-block__photo {
+    width: 30%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px black;
+}
