@@ -14,21 +14,25 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-block">
+                    <img src="./images/sign.png" alt="Logo" class="navbar-block__logo">
                     <ul class="navbar-block__menu">
                         <a href="#about-me">O mně</a>
-                        <a href="#education-work-brigades">Vzdělání, práce a brigády v IT</a>
+                        <a href="#edu-work-brig">Vzdělání, práce a brigády v IT</a>
                         <a href="#projects">Projekty</a>
                         <a href="#footer">Máš otázky</a>
                     </ul>
                     <div class="navbar-block__socials">
-                        <a target="_blank" href="https://github.com/Veselyy" class="social-icon"><i class="fa-brands fa-github fa-lg"></i></a>
-                        <a target="_blank" href="https://www.instagram.com/imthemartas/" class="social-icon"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                        <a target="_blank" href="https://www.facebook.com/imthemartas/" class="social-icon"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                        <a target="_blank" href="https://github.com/Veselyy" class="social-icon"><i
+                                class="fa-brands fa-github fa-lg"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/imthemartas/" class="social-icon"><i
+                                class="fa-brands fa-instagram fa-lg"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/imthemartas/" class="social-icon"><i
+                                class="fa-brands fa-facebook fa-lg"></i></a>
                     </div>
                 </div>
             </div>
         </nav>
-        
+
         <section id="about-me">
             <div class="container">
                 <h2 class="about-me__title">
@@ -49,14 +53,39 @@
                         <strong>úspěchu</strong>.
                     </p>
                     <img src="./images/photo_about_me.jpg" alt="Moje fotka" class="about-me-block__photo">
-
                 </div>
             </div>
         </section>
 
-        <section id="education-work-brigades">
+        <section id="edu-work-brig">
             <div class="container">
-                <h2 class="education-work-brigades__title">Vzdělání, práce a brigády v IT</h2>
+                <h2 class="edu-work-brig__title">Vzdělání, práce a brigády v IT</h2>
+                <div class="edu-work-brig-slider">
+                    <div class="edu-work-brig-slider-item" id="hs"> <!--Střední škola-->
+                        <h3 class="edu-work-brig-slider-item__title">
+                            Střední škola
+                        </h3>
+                        <p class="edu-work-brig-slider-item__date">
+                            2020 - 2024
+                        </p>
+                    </div>
+                    <div class="edu-work-brig-slider-item" id="college"> <!--Vysoká škola-->
+                        <h3 class="edu-work-brig-slider-item__title">
+                            Vysoká škola
+                        </h3>
+                        <p class="edu-work-brig-slider-item__date">
+                            2024...
+                        </p>
+                    </div>
+                    <div class="edu-work-brig-slider-item" id="brigade"> <!--Brigáda Commity-->
+                        <h3 class="edu-work-brig-slider-item__title">
+                            Brigáda u Commity
+                        </h3>
+                        <p class="edu-work-brig-slider-item__date">
+                            01.06.2024 - 10.09.2024
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -75,6 +104,30 @@
                 </div>
         </footer>
     </main>
+    <div class="modal" id="hs-modal-box">
+        <div class="hs-modal-box-block modal-block">
+            <p>
+                Modální okno pro střední školu.
+            </p>
+        </div>
+    </div>
+    <div class="modal" id="college-modal-box">
+        <div class="college-modal-box-block modal-block">
+            <p>
+                Modální okno pro vysokou školu.
+            </p>
+        </div>
+    </div>
+    <div class="modal" id="commity-modal-box">
+        <div class="commity-modal-box-block modal-block">
+            <p>
+                Modální okno pro brigádu.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

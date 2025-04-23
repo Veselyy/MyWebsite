@@ -5,37 +5,27 @@
 
 * {
     box-sizing: border-box;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
 }
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
-section, footer {
+section,
+footer {
     height: 100vh;
-    padding: 4rem 0;
-}
-
-section {
-    position: relative;
-}
-
-section::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    width: 50%;
-    height: 1px;
-    background-color: black;
-    opacity: .5;
+    padding-top: 4rem;
 }
 
 main {
     position: relative;
+}
+
+h2 {
+    margin-bottom: 1rem;
 }
 
 .container {
@@ -60,9 +50,9 @@ main {
     padding: 1rem 0;
 }
 
-.navbar-block__logo a {
-    text-decoration: none;
-    color: black;
+.navbar-block__logo {
+    border-radius: 100px;
+    width: 30px;
 }
 
 .navbar-block__menu {
@@ -159,4 +149,103 @@ main {
     width: 30%;
     border-radius: 50%;
     box-shadow: 0 0 20px black;
+}
+
+.edu-work-brig-slider {
+    margin-top: 8rem;
+    height: 100%;
+    display: grid;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.edu-work-brig-slider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 100px;
+    background-color: black;
+}
+
+.edu-work-brig-slider-item {
+    position: relative;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.edu-work-brig-slider-item:hover {
+    transform: scale(1.05);
+    transition: var(--transition);
+}
+
+.edu-work-brig-slider-item:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1;
+}
+
+.edu-work-brig-slider-item:nth-child(even) {
+    margin-top: 101px;
+}
+
+.edu-work-brig-slider-item:nth-child(odd)::after,
+.edu-work-brig-slider-item:nth-child(even)::after {
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: black;
+}
+
+.edu-work-brig-slider-item:nth-child(even)::after {
+    top: auto;
+    bottom: 115%;
+}
+
+.edu-work-brig-slider-item:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 2;
+}
+
+.edu-work-brig-slider-item:nth-child(3) {
+    grid-column: 3/4;
+    grid-row: 1;
+}
+
+.edu-work-brig-slider-item__date {
+    color: gray;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-active {
+    display: flex;
+}
+
+.modal-block {
+    background: white;
+    width: 50%;
+    height: 40%;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
