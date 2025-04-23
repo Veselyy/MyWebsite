@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moje Webová Prezentace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
+    <main>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-block">
+                    <ul class="navbar-block__menu">
+                        <a href="#about-me">O mně</a>
+                        <a href="#education-work-brigades">Vzdělání, práce a brigády v IT</a>
+                        <a href="#projects">Projekty</a>
+                        <a href="#footer">Máš otázky</a>
+                    </ul>
+                    <div class="navbar-block__socials">
+                        <a target="_blank" href="https://github.com/Veselyy" class="social-icon"><i class="fa-brands fa-github fa-lg"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/imthemartas/" class="social-icon"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/imthemartas/" class="social-icon"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <section id="about-me">
+            <div class="container">
+                <h2 class="about-me__title">
+                    O mně
+                </h2>
+                <div class="about-me-block">
+                    <p class="about-me-block__desc">
+                        Zdravím, já jsem Martin, jsem z venkova a věnuji se <strong>IT</strong> 💻 už 4 rokem.
+                        <br><br>
+                        Jsem <strong>student,</strong> rád dělám <strong>sporty</strong> 🏃‍♂️ a rád se bavím s lidmi,
+                        kteří mi mají
+                        <strong>co předat</strong>.
+                        <br><br>
+                        Můj silný zájem o <strong>učení</strong> a <strong>osobní rozvoj</strong> mě motivuje využívat
+                        každou příležitost ke <strong>kariérnímu růstu</strong>.
+                        <br><br>
+                        Jsem připraven <strong>čelit</strong> novým výzvám a přispět ke společnému
+                        <strong>úspěchu</strong>.
+                    </p>
+                    <img src="./images/photo_about_me.jpg" alt="Moje fotka" class="about-me-block__photo">
+
+                </div>
+            </div>
+        </section>
+
+        <section id="education-work-brigades">
+            <div class="container">
+                <h2 class="education-work-brigades__title">Vzdělání, práce a brigády v IT</h2>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="projects__title">Projekty (všechny i rozdělané)</h2>
+            </div>
+        </section> <!-- zde budou podsekce jako "Minulé, Rozdělané a V plánu" -->
+        <footer id="footer">
+            <div class="container">
+                <h2 class="footer__title">
+                    Máš dotaz? Stačí napsat!
+                </h2>
+                <div class="footer-block">
+                    <p class="footer-block__desc">© 2023 Martin Veselý</p>
+                </div>
+        </footer>
+    </main>
 </body>
+
 </html>
