@@ -67,11 +67,23 @@ $('#contact-form').on('submit', function (e) {
       url: '/',
       data: data,
       success: function () {
-        alert('Díky! Zpráva byla odeslána.');
+        Swal.fire({
+            title: 'Díky!',
+            text: 'Zpráva byla odeslána.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#7b2d3a'
+          });
         form[0].reset(); // vyčistí formulář
       },
-      error: function (err) {
-        alert('Došlo k chybě: ' + err.statusText);
+      error: function (error) {
+        Swal.fire({
+            title: 'Chyba',
+            text: 'Nepodařilo se odeslat zprávu: ' + error,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#7b2d3a'
+          });
       }
     });
   });
