@@ -15,13 +15,13 @@
             <div class="container">
                 <div class="navbar-block">
                     <button id="toggle-theme">
-                        <i id="theme-toggle" class="fa-regular fa-sun fa-lg"></i>
+                        <i id="theme-toggle" class="fa-regular fa-moon fa-lg"></i>
                     </button>
                     <ul class="navbar-block__menu">
                         <a href="#about-me">O mně</a>
                         <a href="#edu-work-brig">Vzdělání, práce a brigády v IT</a>
                         <a href="#projects">Projekty</a>
-                        <a href="#footer">Máš otázky</a>
+                        <a href="#footer">Kontakt na mě</a>
                     </ul>
                     <div class="navbar-block__socials">
                         <a target="_blank" href="https://github.com/Veselyy" class="social-icon"><i
@@ -155,10 +155,33 @@
         <footer id="footer">
             <div class="container">
                 <h2 class="footer__title">
-                    Máš dotaz? Stačí napsat!
+                    Kontakt na mě
                 </h2>
                 <div class="footer-block">
-                    <p class="footer-block__desc">© 2023 Martin Veselý</p>
+                    <div class="footer-block-links">
+                        <div class="footer-block-links__text">
+                            <span>
+                                Email: <a href="mailto:imthemartinveselyap@gmail.com">imthemartinveselyap@gmail.com</a>
+                            </span>
+                            <span>
+                                Telefon: <a href="tel:+420732424435">+420 732 424 435</a>
+                            </span>
+                        </div>
+                        <div class="footer-block-links__socials">
+                            <a target="_blank" href="https://github.com/Veselyy" class="social-icon"><i
+                                class="fa-brands fa-github fa-lg"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/imthemartas/" class="social-icon"><i
+                                class="fa-brands fa-instagram fa-lg"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/imthemartas/" class="social-icon"><i
+                                class="fa-brands fa-facebook fa-lg"></i></a>
+                        </div>
+                    </div>
+                    <form method="post" data-netlify="true" action="#">
+                            <input type="text" name="name" placeholder="Martin" required>
+                            <input type="email" name="email" placeholder="imthemartinveselyap@gmail.com" required>
+                            <textarea name="message" rows="5" placeholder="Zpráva"></textarea>
+                            <button id="form-button" type="submit">Odeslat</button>
+                    </form>
                 </div>
         </footer>
     </main>

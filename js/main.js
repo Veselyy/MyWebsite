@@ -6,9 +6,9 @@ $(document).ready(function () {
         const icon = $("#theme-toggle");
 
         if ($('body').hasClass('dark-mode')) {
-            icon.removeClass('fa-sun').addClass('fa-moon');
-          } else {
             icon.removeClass('fa-moon').addClass('fa-sun');
+          } else {
+            icon.removeClass('fa-sun').addClass('fa-moon');
           }
     });
 
