@@ -407,6 +407,7 @@ input,textarea, #form-button {
     padding: 3px;
     font-size: 14px;
     color: black;
+    border: 1px solid black;
 }
 
 #form-button {
