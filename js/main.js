@@ -1,3 +1,16 @@
+$(document).ready(function () {
+
+    $("#toggle-theme").click(function(){
+        $("body").toggleClass('dark-mode');
+
+        const icon = $("#theme-toggle");
+
+        if ($('body').hasClass('dark-mode')) {
+            icon.removeClass('fa-sun').addClass('fa-moon');
+          } else {
+            icon.removeClass('fa-moon').addClass('fa-sun');
+          }
+    });
 
 $("#hs").click(function(){
     $("#hs-modal-box").css("display", "flex").animate({ opacity: 1 }, 300).addClass('modal-active');
@@ -41,4 +54,6 @@ $("#commity-modal-box").click(function(){
 
 $(".modal-block").click(function (event) {
     event.stopPropagation();
+});
+
 });
