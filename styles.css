@@ -98,7 +98,7 @@ h2 {
 }
 
 .navbar-block__menu a:nth-child(4):before {
-    content: "\3f";
+    content: "\f1d8";
 }
 
 .navbar-block__menu a::after {
@@ -197,7 +197,7 @@ h2 {
 .edu-work-brig-slider-item:hover .edu-work-brig-slider-item__title,
 .edu-work-brig-slider-item:hover .edu-work-brig-slider-item__date {
     scale: 1.05;
-    filter: drop-shadow(0 0 10px var(--black));
+    text-shadow: 0 0 15px var(--black);
     transition: var(--transition);
 }
 
@@ -359,4 +359,56 @@ table {
 
 .hobbies-card:nth-child(4)::before {
     content: "\e69b";
+}
+
+
+
+
+
+
+
+footer {
+    min-height: auto;
+    padding-bottom: 4rem;
+}
+
+.footer-block {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-block-links {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-block-links__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-block-links__socials {
+    display: flex;
+    gap: 1rem;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input,textarea, #form-button {
+    width: 100%;
+    padding: 3px;
+    font-size: 14px;
+    color: black;
+}
+
+#form-button {
+    cursor: pointer;
 }
