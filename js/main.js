@@ -56,22 +56,24 @@ $(".modal-block").click(function (event) {
     event.stopPropagation();
 });
 
-function handleSubmit(e) {
-    e.preventDefault(); // Zabrání přesměrování
+$('#contact-form').on('submit', function (e) {
+    e.preventDefault();
 
-    const form = e.target;
-    const data = new FormData(form);
+    const form = $(this);
+    const data = form.serialize(); // převede na URL encoded string
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(),
-    })
-      .then(() => {
-        alert("Díky za zprávu! Ozveme se co nejdřív.");
-        form.reset(); // Vyčistí formulář
-      })
-      .catch((error) => alert("Něco se pokazilo: " + error));
-  }
+    $.ajax({
+      type: 'POST',
+      url: '/',
+      data: data,
+      success: function () {
+        alert('Díky! Zpráva byla odeslána.');
+        form[0].reset(); // vyčistí formulář
+      },
+      error: function (err) {
+        alert('Došlo k chybě: ' + err.statusText);
+      }
+    });
+  });
 
 });
