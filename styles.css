@@ -16,7 +16,7 @@ html {
 
 section,
 footer {
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 4rem;
 }
 
@@ -39,7 +39,7 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     backdrop-filter: blur(5px);
 }
 
@@ -178,8 +178,16 @@ h2 {
     cursor: pointer;
 }
 
-.edu-work-brig-slider-item:hover {
-    transform: scale(1.05);
+.edu-work-brig-slider-item__title, .edu-work-brig-slider-item__date {
+    scale: 1;
+    transition: var(--transition);
+}
+
+.edu-work-brig-slider-item:hover .edu-work-brig-slider-item__title,
+.edu-work-brig-slider-item:hover .edu-work-brig-slider-item__date {
+    scale: 1.05;
+    filter: drop-shadow(0 0 3px black);
+    color: white;
     transition: var(--transition);
 }
 
@@ -188,19 +196,34 @@ h2 {
     grid-row: 1;
 }
 
-.edu-work-brig-slider-item:nth-child(odd)::after,
-.edu-work-brig-slider-item:nth-child(even)::after {
+.edu-work-brig-slider-item::before {
+    content: "";
+    position: absolute;
+    top: 41%;
+    right: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    background-color: black;
+}
+
+.edu-work-brig-slider-item:nth-child(even)::before {
+    left: -4px;
+    right: auto;
+}
+
+.edu-work-brig-slider-item::after {
     content: "";
     position: absolute;
     top: 50%;
-    right: 2.1%;
-    width: 25%;
+    right: 0;
+    width: 30%;
     height: 2px;
     background-color: black;
 }
 
 .edu-work-brig-slider-item:nth-child(even)::after {
-    left: 2.4%;
+    left: 0;
     right: auto;
 }
 
@@ -226,7 +249,7 @@ h2 {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: none;
-    z-index: 3;
+    z-index: 2;
     justify-content: center;
     align-items: center;
 }
@@ -283,6 +306,7 @@ h2 {
 table {
     width: 100%;
     text-align: center;
+    border-spacing: 10px 5px;
 }
 
 .skills__title, .hobbies__title {
@@ -308,7 +332,7 @@ table {
 .hobbies-card::before {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    margin-right: 5px;
+    margin-right: 10px;
     width: auto;
 }
 .hobbies-card:nth-child(1)::before {
