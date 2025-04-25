@@ -88,4 +88,17 @@ $('#contact-form').on('submit', function (e) {
     });
   });
 
+  $('.nav-link').on('click', function (e) {
+    e.preventDefault();
+    const target = $(this.getAttribute('href'));
+
+    if (target.length) {
+      $('html, body').animate(
+        {
+          scrollTop: target.offset().top, // offset kvůli menu
+        },
+        1000);
+    }
+  });
+
 });
