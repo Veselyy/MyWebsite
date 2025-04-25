@@ -56,4 +56,22 @@ $(".modal-block").click(function (event) {
     event.stopPropagation();
 });
 
+function handleSubmit(e) {
+    e.preventDefault(); // Zabrání přesměrování
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then(() => {
+        alert("Díky za zprávu! Ozveme se co nejdřív.");
+        form.reset(); // Vyčistí formulář
+      })
+      .catch((error) => alert("Něco se pokazilo: " + error));
+  }
+
 });
