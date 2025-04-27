@@ -129,7 +129,7 @@ $('#contact-form').on('submit', function (e) {
   let isToggled = false;
 
   if ($(window).width() <= 600) {
-    $navBars.on('click', () => {
+    $navBars.on('click', function(){
 
       if (!isToggled) {
         $navBars.insertBefore('.navbar-block__menu li:first-child');
@@ -178,19 +178,17 @@ $('#contact-form').on('submit', function (e) {
       $('#toggle-theme').css({
         display: 'none',
       });
-      $('.nav-link').click(function() {
-        resetStyles();
-        isToggled = !isToggled;
-      })
-      $('.nav-link').css({
-        isToggled: 'true',
-    });
     }
       else {
         resetStyles();
       }
-
       isToggled = !isToggled;
     });
-    }
+
+    $('.nav-link-li').click(function() {
+      resetStyles();
+      isToggled = !isToggled;
+    });
+
+  };
 });
