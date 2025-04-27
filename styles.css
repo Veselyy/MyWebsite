@@ -69,35 +69,51 @@ h2 {
     gap: 2rem;
 }
 
-.navbar-block__menu a {
+.navbar-block__menu li {
     padding: 7px;
-    text-decoration: none;
     position: relative;
+    cursor: pointer;
 }
 
-.navbar-block__menu a::before {
+.navbar-block__menu li:last-child {
+    padding: 0;
+}
+
+.navbar-block__menu li a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.navbar-block__menu li:last-child {
+    display: none;
+}
+
+.navbar-block__menu li::before {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    margin-right: 10px;
 }
 
-.navbar-block__menu a:nth-child(1):before {
+.navbar-block__menu li:nth-child(1):before {
     content: "\f007";
 }
 
-.navbar-block__menu a:nth-child(2):before {
+.navbar-block__menu li:nth-child(2):before {
     content: "\f19d";
 }
 
-.navbar-block__menu a:nth-child(3):before {
+.navbar-block__menu li:nth-child(3):before {
     content: "\f07c";
 }
 
-.navbar-block__menu a:nth-child(4):before {
+.navbar-block__menu li:nth-child(4):before {
     content: "\f1d8";
 }
 
-.navbar-block__menu a::after {
+.navbar-block__menu li:nth-child(5):before {
+    content: "\f0c9";
+}
+
+.navbar-block__menu li::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -108,7 +124,7 @@ h2 {
     transition: var(--transition);
 }
 
-.navbar-block__menu a:hover::after {
+.navbar-block__menu li:hover::after {
     width: 100%;
     transition: var(--transition);
 }
@@ -408,4 +424,60 @@ input,textarea, #form-button {
 
 #form-button {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .edu-work-brig-slider-item::after {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar-block__menu li a {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar-block__menu li {
+        display: none;
+    }
+
+    .navbar-block__socials {
+        display: none;
+    }
+
+    .navbar-block__menu li:last-child {
+        padding: 7px;
+        display: block;
+    }
+
+    .about-me-block {
+        flex-direction: column-reverse;
+    }
+
+    .about-me-block__desc {
+        width: 100%;
+        margin-top: 4rem;
+    }
+
+    .footer-block {
+        flex-direction: column-reverse;
+    }
+
+    .footer-block-links, form {
+        width: 100%;
+    }
+
+    .footer-block-links {
+        margin-top: 4rem;
+    }
+
+    .edu-work-brig-slider-item::after {
+        width: 5%;
+    }
+
+    .modal-block {
+        max-width: 90%;
+    }
 }
