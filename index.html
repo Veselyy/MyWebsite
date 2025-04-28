@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moje Webová Prezentace</title>
     <link rel="icon" href="./images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,7 +24,8 @@
                     </button>
                     <ul class="navbar-block__menu">
                         <li class="nav-link-li"><a href="#about-me" class="nav-link">O mně</a></li>
-                        <li class="nav-link-li"><a href="#edu-work-brig" class="nav-link">Vzdělání, práce a brigády v IT</a></li>
+                        <li class="nav-link-li"><a href="#edu-work-brig" class="nav-link">Vzdělání, práce a brigády v
+                                IT</a></li>
                         <li class="nav-link-li"><a href="#projects" class="nav-link">Projekty</a></li>
                         <li class="nav-link-li"><a href="#footer" class="nav-link">Kontakt na mě</a></li>
                         <li id="nav-bars"></li>
@@ -92,25 +97,25 @@
                     <div class="hobbies-card">
                         <div class="hobbies-card__text">
                             <h4>Sport</h4>
-                        <p>Jakýkoliv sport, který mě udržuje aktivním a fit.</p>
+                            <p>Jakýkoliv sport, který mě udržuje aktivním a fit.</p>
                         </div>
                     </div>
                     <div class="hobbies-card">
-                       <div class="hobbies-card__text">
-                        <h4>Učení nových věcí</h4>
-                        <p>Rád se učím nové technologie, dovednosti a rozšiřuji své znalosti.</p>
-                       </div>
+                        <div class="hobbies-card__text">
+                            <h4>Učení nových věcí</h4>
+                            <p>Rád se učím nové technologie, dovednosti a rozšiřuji své znalosti.</p>
+                        </div>
                     </div>
                     <div class="hobbies-card">
                         <div class="hobbies-card__text">
                             <h4>Komunikace</h4>
-                        <p>Komunikace s lidmi s podobným zájmem mě inspiruje a motivuje.</p>
+                            <p>Komunikace s lidmi s podobným zájmem mě inspiruje a motivuje.</p>
                         </div>
                     </div>
                     <div class="hobbies-card">
                         <div class="hobbies-card__text">
                             <h4>Programování</h4>
-                        <p>Věnuji se programování aplikací a hledání inovativních řešení.</p>
+                            <p>Věnuji se programování aplikací a hledání inovativních řešení.</p>
                         </div>
                     </div>
                 </div>
@@ -151,9 +156,88 @@
 
         <section id="projects">
             <div class="container">
-                <h2 class="projects__title">Projekty (všechny i rozdělané)</h2>
+                <h2 class="projects__title">Projekty</h2>
+                <div class="projects-block">
+                    <div class="project-card">
+                        <h3>Sledovač návyků</h3>
+                        <span class="project-card__status"><i class="fa-solid fa-circle fa-2xs"></i>Vlastní projekt
+                            (rozdělaný)</span>
+                        <div class="project-card-links">
+                            <a class="github-link" target="_blank" href="https://github.com/Veselyy/HabitTracker">Odkaz
+                                na GitHub</a>
+                            <a id="pi1-link" class="picture-link" target="_blank" href="#">Zobrazit obrázek</a>
+                        </div>
+                        <p class="project-card__desc">
+                            - Tato webová aplikace slouží ke sledování denních návyků. <br><br>
+                            - Uživatelé si mohou jednoduše přidávat nové návyky, upravovat je podle potřeby a
+                            každodenně zaznamenávat jejich plnění. <br><br>
+                            - Aplikace zároveň nabízí přehledné statistiky, které ukazují úspěšnost plnění
+                            jednotlivých návyků v čase, a pomáhá tak budovat pozitivní rutiny.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Myšlenkové mapy</h3>
+                        <span class="project-card__status"><i class="fa-solid fa-circle fa-2xs"></i>Maturitní projekt
+                            (hotový)</span>
+                        <div class="project-card-links">
+                            <a class="github-link" target="_blank" href="https://github.com/Veselyy/MATURITA">Odkaz na
+                                GitHub</a>
+                            <a class="page-link" target="_blank" href="https://myslenkovemapy.netlify.app">Přejít na
+                                stránku</a>
+                            <a id="pi2-link" class="picture-link" target="_blank" href="#">Zobrazit obrázek</a>
+                        </div>
+                        <p class="project-card__desc">
+                            - Tato stránka se věnuje myšlenkovým mapám jako efektivnímu nástroji pro organizaci
+                            myšlenek, plánování a rozvoj kreativity. <br><br>
+                            - Návštěvníci zde najdou vysvětlení principů tvorby myšlenkových map, praktické ukázky a
+                            videa s návody na tvorbu map v několika online nástrojích. <br><br>
+                            - Cílem je ukázat, jak jednoduše lze myšlenkové mapy začlenit do každodenního studia, práce
+                            i osobního rozvoje.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Koloběžky</h3>
+                        <span class="project-card__status"><i class="fa-solid fa-circle fa-2xs"></i>Design</span>
+                        <div class="project-card-links">
+                            <a class="github-link" target="_blank" href="https://github.com/Veselyy/Kolobezky">Odkaz na
+                                GitHub</a>
+                            <a class="page-link" target="_blank" href="https://veselyy.github.io/Kolobezky/src/">Přejít
+                                na stránku</a>
+                            <a id="pi3-link" class="picture-link" target="_blank" href="#">Zobrazit obrázek</a>
+                        </div>
+                        <p class="project-card__desc">
+                            - Stránka představuje online katalog elektro-koloběžek. <br><br>
+                            - Nabízí přehled X modelů s cenami, rychlým doručením a doprovodnými informacemi. <br><br>
+                            - Obsahuje sekce o výhodách nákupu, zákaznické recenze a jednoduchou navigaci s možností
+                            vyhledávání a nákupního košíku.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Služba HouseFix</h3>
+                        <span class="project-card__status"><i class="fa-solid fa-circle fa-2xs"></i>Design</span>
+                        <div class="project-card-links">
+                            <a class="github-link" target="_blank"
+                                href="https://github.com/Veselyy/HouseFix_Build">Odkaz na GitHub</a>
+                            <a class="page-link" target="_blank"
+                                href="https://veselyy.github.io/HouseFix_Build/src/">Přejít na stránku</a>
+                            <a id="pi4-link" class="picture-link" target="_blank" href="#">Zobrazit obrázek</a>
+                        </div>
+                        <p class="project-card__desc">
+                            - Stránka představuje službu HouseFix zaměřenou na kompletní renovace bytů, domů a kanceláří
+                            "na klíč" v Praze. <br><br>
+                            - Nabízí bezplatné vypracování designového projektu, rychlý výpočet nákladů, flexibilní
+                            slevy, garanci kvality a dodržení termínů. <br><br>
+                            - Obsahuje také přehled služeb, ukázky realizací, popis postupu spolupráce a kontaktní
+                            informace.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </section> <!-- zde budou podsekce jako "Minulé, Rozdělané a V plánu" -->
+        </section>
+
         <footer id="footer">
             <div class="container">
                 <h2 class="footer__title">
@@ -171,22 +255,38 @@
                         </div>
                         <div class="footer-block-links__socials">
                             <a target="_blank" href="https://github.com/Veselyy" class="social-icon"><i
-                                class="fa-brands fa-github fa-lg"></i></a>
-                        <a target="_blank" href="https://www.instagram.com/imthemartas/" class="social-icon"><i
-                                class="fa-brands fa-instagram fa-lg"></i></a>
-                        <a target="_blank" href="https://www.facebook.com/imthemartas/" class="social-icon"><i
-                                class="fa-brands fa-facebook fa-lg"></i></a>
+                                    class="fa-brands fa-github fa-lg"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/imthemartas/" class="social-icon"><i
+                                    class="fa-brands fa-instagram fa-lg"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/imthemartas/" class="social-icon"><i
+                                    class="fa-brands fa-facebook fa-lg"></i></a>
                         </div>
                     </div>
-                    <form name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)" id="contact-form">
-                            <input type="text" name="name" placeholder="Martin" required>
-                            <input type="email" name="email" placeholder="imthemartinveselyap@gmail.com" required>
-                            <textarea name="message" rows="5" placeholder="Zpráva"></textarea>
-                            <button id="form-button" type="submit">Odeslat</button>
+                    <form name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)"
+                        id="contact-form">
+                        <input type="text" name="name" placeholder="Martin" required>
+                        <input type="email" name="email" placeholder="imthemartinveselyap@gmail.com" required>
+                        <textarea name="message" rows="5" placeholder="Zpráva"></textarea>
+                        <button id="form-button" type="submit">Odeslat</button>
                     </form>
                 </div>
+            </div>
         </footer>
     </main>
+
+    <div class="modal" id="pi1-modal-box"> <!-- Náhled projektu 1 -->
+        <img class="pi1-modal-box-block" src="./images/img-project1.png" alt="Náhled projektu 1">
+    </div>
+    <div class="modal" id="pi2-modal-box"> <!-- Náhled projektu 2 -->
+        <img class="pi2-modal-box-block" src="./images/img-project2.png" alt="Náhled projektu 2">
+    </div>
+    <div class="modal" id="pi3-modal-box"> <!-- Náhled projektu 3 -->
+        <img class="pi3-modal-box-block" src="./images/img-project3.png" alt="Náhled projektu 3">
+    </div>
+    <div class="modal" id="pi4-modal-box"> <!-- Náhled projektu 4 -->
+        <img class="pi4-modal-box-block" src="./images/img-project4.png" alt="Náhled projektu 4">
+    </div>
+
     <div class="modal" id="hs-modal-box">
         <div class="hs-modal-box-block modal-block">
             <h3 class="modal-block__title">
@@ -194,7 +294,8 @@
             </h3>
             <a target="_blank" href="https://www.spszr.cz" class="modal-block__link">Odkaz na stránky školy</a>
             <p class="modal-block__desc">
-                - Studoval jsem obor <strong>IT</strong>, zaměřený na <strong>programování</strong> a <strong>správu sítí</strong>...
+                - Studoval jsem obor <strong>IT</strong>, zaměřený na <strong>programování</strong> a <strong>správu
+                    sítí</strong>...
             </p>
         </div>
     </div>
@@ -205,8 +306,11 @@
             </h3>
             <a target="_blank" href="https://www.vut.cz" class="modal-block__link">Odkaz na stránky školy</a>
             <p class="modal-block__desc">
-                - Studuji obor <strong>FIT(IT)</strong>, zaměřený především na vývoj <strong>softwarových řešení</strong> od algoritmů a datových struktur, přes <strong>umělou inteligenci</strong> až po softwarové inženýrství. <br> <br>
-                - Dále se věnuje <strong>kybernetické bezpečnosti</strong>, vestavným systémům a <strong>IoT</strong>, digitálnímu zpracování signálu a obrazu, telekomunikačním a síťovým technologiím...
+                - Studuji obor <strong>FIT(IT)</strong>, zaměřený především na vývoj <strong>softwarových
+                    řešení</strong> od algoritmů a datových struktur, přes <strong>umělou inteligenci</strong> až po
+                softwarové inženýrství. <br> <br>
+                - Dále se věnuje <strong>kybernetické bezpečnosti</strong>, vestavným systémům a <strong>IoT</strong>,
+                digitálnímu zpracování signálu a obrazu, telekomunikačním a síťovým technologiím...
             </p>
         </div>
     </div>
@@ -218,16 +322,19 @@
             <a target="_blank" href="https://commity.cz" class="modal-block__link">Odkaz na stránky školy</a>
             <p class="modal-block__desc">
                 - Pracoval jsem primárně na <strong>frontendu</strong> webových aplikací (JSX, TSX, React). <br><br>
-                - Také jsem si sáhl na práci s daty v <strong>Metabase</strong> (SQL dotazy) a na práci s <strong>API</strong> (REST, Postman). <br><br>
+                - Také jsem si sáhl na práci s daty v <strong>Metabase</strong> (SQL dotazy) a na práci s
+                <strong>API</strong> (REST, Postman). <br><br>
                 - V rámci práce jsem se podílel na vývoji a údržbě webových aplikací pro naše klienty. <br><br>
-                - Měl jsem možnost pracovat na různých projektech, které mi umožnily rozvíjet své dovednosti v oblasti <strong>programování</strong>, <strong>komunikace v týmu</strong>, <strong>organizace práce</strong> a <strong>time managementu</strong>...
+                - Měl jsem možnost pracovat na různých projektech, které mi umožnily rozvíjet své dovednosti v oblasti
+                <strong>programování</strong>, <strong>komunikace v týmu</strong>, <strong>organizace práce</strong> a
+                <strong>time managementu</strong>...
             </p>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
