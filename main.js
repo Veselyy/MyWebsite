@@ -18,7 +18,7 @@ $("#hs").click(function(){
 });
 
 $("#hs-modal-box").click(function(){
-    $("#hs-modal-box").animate({ opacity: 0 }, 300, function() {
+    $(this).animate({ opacity: 0 }, 300, function() {
         $(this).css("display", "none").removeClass('modal-active');
     });
     $("body").css("overflow", "auto");
@@ -31,7 +31,7 @@ $("#college").click(function(){
 });
 
 $("#college-modal-box").click(function(){
-    $("#college-modal-box").animate({ opacity: 0 }, 300, function() {
+    $(this).animate({ opacity: 0 }, 300, function() {
         $(this).css("display", "none").removeClass('modal-active');
     });
     $("body").css("overflow", "auto");
@@ -44,10 +44,62 @@ $("#brigade").click(function(){
 });
 
 $("#commity-modal-box").click(function(){
-    $("#commity-modal-box").animate({ opacity: 0 }, 300, function() {
+    $(this).animate({ opacity: 0 }, 300, function() {
         $(this).css("display", "none").removeClass('modal-active');
     });
     $("body").css("overflow", "auto");
+});
+
+$("#pi1-link").click(function(e){
+  e.preventDefault();
+  $("#pi1-modal-box").css("display", "flex").animate({ opacity: 1 }, 300).addClass('modal-active');
+  $("body").css("overflow", "hidden");
+});
+
+$("#pi1-modal-box").click(function(){
+  $(this).animate({ opacity: 0 }, 300, function() {
+      $(this).css("display", "none").removeClass('modal-active');
+  });
+  $("body").css("overflow", "auto");
+});
+
+$("#pi2-link").click(function(e){
+  e.preventDefault();
+  $("#pi2-modal-box").css("display", "flex").animate({ opacity: 1 }, 300).addClass('modal-active');
+  $("body").css("overflow", "hidden");
+});
+
+$("#pi2-modal-box").click(function(){
+  $(this).animate({ opacity: 0 }, 300, function() {
+      $(this).css("display", "none").removeClass('modal-active');
+  });
+  $("body").css("overflow", "auto");
+});
+
+$("#pi3-link").click(function(e){
+  e.preventDefault();
+  $("#pi3-modal-box").css("display", "flex").animate({ opacity: 1 }, 300).addClass('modal-active');
+  $("body").css("overflow", "hidden");
+});
+
+$("#pi3-modal-box").click(function(){
+  $(this).animate({ opacity: 0 }, 300, function() {
+      $(this).css("display", "none").removeClass('modal-active');
+  });
+  $("body").css("overflow", "auto");
+});
+
+$("#pi4-link").click(function(e){
+  e.preventDefault();
+  $("#pi4-modal-box").css("display", "flex").animate({ opacity: 1 }, 300).addClass('modal-active');
+  $("body").css("overflow", "hidden");
+});
+
+$("#pi4-modal-box").click(function(){
+  $(this).animate({ opacity: 0 }, 300, function() {
+      $(this).css("display", "none").removeClass('modal-active');
+  });
+  $("body").css("overflow", "auto");
 });
 
 
@@ -129,7 +181,7 @@ $('#contact-form').on('submit', function (e) {
   let isToggled = false;
 
   if ($(window).width() <= 600) {
-    $navBars.on('click', () => {
+    $navBars.on('click', function(){
 
       if (!isToggled) {
         $navBars.insertBefore('.navbar-block__menu li:first-child');
@@ -178,19 +230,17 @@ $('#contact-form').on('submit', function (e) {
       $('#toggle-theme').css({
         display: 'none',
       });
-      $('.nav-link').click(function() {
-        resetStyles();
-        isToggled = !isToggled;
-      })
-      $('.nav-link').css({
-        isToggled: 'true',
-    });
     }
       else {
         resetStyles();
       }
-
       isToggled = !isToggled;
     });
-    }
+
+    $('.nav-link-li').click(function() {
+      resetStyles();
+      isToggled = !isToggled;
+    });
+
+  };
 });
