@@ -446,7 +446,7 @@ table {
 }
 
 .pi1-modal-box-block {
-    max-width: 50%;
+    max-height: 70%;
 }
 
 footer {
@@ -568,10 +568,6 @@ textarea,
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
-    }
-
-    .pi1-modal-box-block {
-        max-width: 90%;
     }
 
     .pi2-modal-box-block,
