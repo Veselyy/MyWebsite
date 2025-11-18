@@ -68,48 +68,30 @@ h2 {
     gap: 2rem;
 }
 
+.navbar-mobile__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 30px;
+}
+
 .navbar-block__menu li {
     padding: 7px;
     position: relative;
     cursor: pointer;
 }
 
-.navbar-block__menu li:last-child {
-    padding: 0;
-}
-
 .navbar-block__menu li a {
     text-decoration: none;
-    margin-left: 10px;
 }
 
-.navbar-block__menu li:last-child {
-    display: none;
+.nav-text {
+    margin-left: 10px;
 }
 
 .navbar-block__menu li::before {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-}
-
-.navbar-block__menu li:nth-child(1):before {
-    content: "\f007";
-}
-
-.navbar-block__menu li:nth-child(2):before {
-    content: "\f19d";
-}
-
-.navbar-block__menu li:nth-child(3):before {
-    content: "\f07c";
-}
-
-.navbar-block__menu li:nth-child(4):before {
-    content: "\f1d8";
-}
-
-.navbar-block__menu li:nth-child(5):before {
-    content: "\f0c9";
 }
 
 .navbar-block__menu li::after {
@@ -155,6 +137,15 @@ h2 {
 .navbar-block__socials a:hover::after {
     width: 100%;
     transition: var(--transition);
+}
+
+.navbar-burger {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 7px;
+    z-index: 3;
 }
 
 .about-me-block {
@@ -508,29 +499,28 @@ textarea,
     }
 }
 
-@media screen and (max-width: 900px) {
-    .navbar-block__menu li a {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 600px) {
 
     .navbar {
         backdrop-filter: blur(10px);
     }
 
-    .navbar-block__menu li {
+    .navbar-desktop__menu {
         display: none;
     }
 
+    .navbar-block:has(.navbar-mobile__menu) {
+    flex-direction: column-reverse;
+}
+
+    .navbar-burger {
+        display: block;
+        align-self: flex-end;
+    }
+
+    /* skrýt social ikonky na mobilu */
     .navbar-block__socials {
         display: none;
-    }
-
-    .navbar-block__menu li:last-child {
-        padding: 7px;
-        display: block;
     }
 
     .about-me-block {
