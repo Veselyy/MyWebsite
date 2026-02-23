@@ -39,7 +39,7 @@ const FooterSection = () => {
                         <input
                             type="email"
                             name="email"
-                            placeholder="imthemartinveselyap@gmail.com"
+                            placeholder="veselymartin.online@gmail.com"
                             required
                         />
                         <textarea name="message" rows={5} placeholder="Zpráva" />
