@@ -11,8 +11,8 @@ const ContactSection = () => {
             <div className="footer-block-links__text">
                 <p className="footer-contact-row">
                     <EmailIcon sx={{ fontSize: ICON_SIZE }} />
-                    <a href="mailto:imthemartinveselyap@gmail.com" className="footer-link">
-                        imthemartinveselyap@gmail.com
+                    <a href="mailto:veselymartin.online@gmail.com" className="footer-link">
+                        veselymartin.online@gmail.com
                     </a>
                 </p>
                 <p className="footer-contact-row">
