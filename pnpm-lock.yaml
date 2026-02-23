@@ -11,6 +11,9 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.14.1
     version: 11.14.1(@emotion/react@11.14.0)(@types/react@19.2.6)(react@19.2.0)
+  '@mui/icons-material':
+    specifier: ^7.3.5
+    version: 7.3.8(@mui/material@7.3.5)(@types/react@19.2.6)(react@19.2.0)
   '@mui/material':
     specifier: ^7.3.5
     version: 7.3.5(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(@types/react@19.2.6)(react-dom@19.2.0)(react@19.2.0)
@@ -40,6 +43,9 @@ devDependencies:
   '@vitejs/plugin-react':
     specifier: ^5.1.0
     version: 5.1.1(vite@7.2.2)
+  baseline-browser-mapping:
+    specifier: ^2.10.0
+    version: 2.10.0
   eslint:
     specifier: ^9.39.1
     version: 9.39.1
@@ -52,6 +58,9 @@ devDependencies:
   globals:
     specifier: ^16.5.0
     version: 16.5.0
+  prettier:
+    specifier: ^3.4.2
+    version: 3.8.1
   typescript:
     specifier: ~5.9.3
     version: 5.9.3
@@ -203,6 +212,11 @@ packages:
 
   /@babel/runtime@7.28.4:
     resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
+    engines: {node: '>=6.9.0'}
+    dev: false
+
+  /@babel/runtime@7.28.6:
+    resolution: {integrity: sha512-05WQkdpL9COIMz4LjTxGpPNCdlpyimKppYNoJ5Di5EUObifl8t4tuLuUBBZEpoLYOmfvIWrsp9fCl0HoPRVTdA==}
     engines: {node: '>=6.9.0'}
     dev: false
 
@@ -717,6 +731,23 @@ packages:
 
   /@mui/core-downloads-tracker@7.3.5:
     resolution: {integrity: sha512-kOLwlcDPnVz2QMhiBv0OQ8le8hTCqKM9cRXlfVPL91l3RGeOsxrIhNRsUt3Xb8wb+pTVUolW+JXKym93vRKxCw==}
+    dev: false
+
+  /@mui/icons-material@7.3.8(@mui/material@7.3.5)(@types/react@19.2.6)(react@19.2.0):
+    resolution: {integrity: sha512-88sWg/UJc1X82OMO+ISR4E3P58I3BjFVg0qkmDu7OWlN8VijneZD3ylFA+ImxuPjMHW3SHosfSJYy1fztoz0fw==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      '@mui/material': ^7.3.8
+      '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.28.6
+      '@mui/material': 7.3.5(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(@types/react@19.2.6)(react-dom@19.2.0)(react@19.2.0)
+      '@types/react': 19.2.6
+      react: 19.2.0
     dev: false
 
   /@mui/material@7.3.5(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(@types/react@19.2.6)(react-dom@19.2.0)(react@19.2.0):
@@ -1344,8 +1375,9 @@ packages:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
 
-  /baseline-browser-mapping@2.8.29:
-    resolution: {integrity: sha512-sXdt2elaVnhpDNRDz+1BDx1JQoJRuNk7oVlAlbGiFkLikHCAQiccexF/9e91zVi6RCgqspl04aP+6Cnl9zRLrA==}
+  /baseline-browser-mapping@2.10.0:
+    resolution: {integrity: sha512-lIyg0szRfYbiy67j9KN8IyeD7q7hcmqnJ1ddWmNt19ItGpNN64mnllmxUNFIOdOm6by97jlL6wfpTTJrmnjWAA==}
+    engines: {node: '>=6.0.0'}
     hasBin: true
     dev: true
 
@@ -1374,7 +1406,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      baseline-browser-mapping: 2.8.29
+      baseline-browser-mapping: 2.10.0
       caniuse-lite: 1.0.30001755
       electron-to-chromium: 1.5.255
       node-releases: 2.0.27
@@ -2065,6 +2097,12 @@ packages:
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier@3.8.1:
+    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /prop-types@15.8.1:
