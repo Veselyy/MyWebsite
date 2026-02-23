@@ -11,7 +11,6 @@ body.dark-mode {
     --white: black;
 }
 
-
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -53,13 +52,19 @@ h2 {
     border: none;
     cursor: pointer;
     background: none;
+    display: inline-flex;
+    transition: var(--transition);
+}
+
+#toggle-theme:hover {
+    transform: scale(1.15);
 }
 
 .navbar-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding-block: 0.5rem;
 }
 
 .navbar-block__menu {
@@ -85,17 +90,18 @@ h2 {
     text-decoration: none;
 }
 
-.nav-text {
-    margin-left: 10px;
+.nav-link-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.navbar-block__menu li::before {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
+.nav-icon {
+    display: flex;
 }
 
 .navbar-block__menu li::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -112,31 +118,17 @@ h2 {
 
 .navbar-block__socials {
     display: flex;
-    justify-content: space-between;
     gap: 1rem;
 }
 
 .navbar-block__socials a {
     text-decoration: none;
-    padding: 7px;
-    color: var(--black);
-    position: relative;
-}
-
-.navbar-block__socials a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 0;
-    background-color: var(--black);
+    display: inline-flex;
     transition: var(--transition);
 }
 
-.navbar-block__socials a:hover::after {
-    width: 100%;
-    transition: var(--transition);
+.navbar-block__socials a:hover {
+    transform: scale(1.15);
 }
 
 .navbar-burger {
@@ -146,6 +138,11 @@ h2 {
     cursor: pointer;
     padding: 7px;
     z-index: 3;
+    transition: var(--transition);
+}
+
+.navbar-burger:hover {
+    transform: scale(1.15);
 }
 
 .about-me-block {
@@ -174,7 +171,7 @@ h2 {
 }
 
 .edu-work-brig-slider::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 50%;
@@ -210,7 +207,7 @@ h2 {
 }
 
 .edu-work-brig-slider-item::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 41%;
     right: -6px;
@@ -226,7 +223,7 @@ h2 {
 }
 
 .edu-work-brig-slider-item::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     right: 0;
@@ -287,17 +284,13 @@ h2 {
     text-decoration: none;
     transition: var(--transition);
     position: relative;
-}
-
-.modal-block__link::before {
-    content: "\f0c1";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .modal-block__link::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -3px;
     left: 0;
@@ -335,35 +328,17 @@ table {
 }
 
 .hobbies-card {
-    padding: 5px;
     border-top: 1px solid var(--black);
     border-bottom: 1px solid var(--black);
-    position: relative;
     display: flex;
     align-items: center;
+    padding-block: 0.25rem;
 }
 
-.hobbies-card::before {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 10px;
-    width: auto;
-}
-
-.hobbies-card:nth-child(1)::before {
-    content: "\f004";
-}
-
-.hobbies-card:nth-child(2)::before {
-    content: "\f51c";
-}
-
-.hobbies-card:nth-child(3)::before {
-    content: "\f086";
-}
-
-.hobbies-card:nth-child(4)::before {
-    content: "\e69b";
+.hobbies-card__content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .project-card {
@@ -383,26 +358,28 @@ table {
     transition: var(--transition);
 }
 
-.project-card__status i {
-    margin-right: 10px;
-}
-
 .project-card__status {
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .project-card a {
     text-decoration: none;
     position: relative;
-    margin-right: 30px;
-    padding: 5px;
-    position: relative;
+}
+
+.project-card-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 .project-card a::after {
-    content: "";
+    content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     height: 1px;
     width: 0;
@@ -415,25 +392,12 @@ table {
     transition: var(--transition);
 }
 
-.github-link::before {
-    content: "\f0c1";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.page-link::before {
-    content: "\f0ac";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.picture-link::before {
-    content: "\f06e";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 10px;
+.github-link,
+.page-link,
+.picture-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .pi1-modal-box-block {
@@ -463,9 +427,46 @@ footer {
     gap: 1rem;
 }
 
+.footer-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .footer-block-links__socials {
     display: flex;
     gap: 1rem;
+}
+
+.footer-link {
+    text-decoration: none;
+    position: relative;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: var(--black);
+    transition: var(--transition);
+}
+
+.footer-link:hover::after {
+    width: 100%;
+    transition: var(--transition);
+}
+
+.footer-social-link {
+    display: inline-flex;
+    color: var(--black);
+    transition: var(--transition);
+}
+
+.footer-social-link:hover {
+    transform: scale(1.15);
 }
 
 form {
@@ -500,7 +501,6 @@ textarea,
 }
 
 @media screen and (max-width: 600px) {
-
     .navbar {
         backdrop-filter: blur(10px);
     }
@@ -510,8 +510,8 @@ textarea,
     }
 
     .navbar-block:has(.navbar-mobile__menu) {
-    flex-direction: column-reverse;
-}
+        flex-direction: column-reverse;
+    }
 
     .navbar-burger {
         display: block;
@@ -525,24 +525,21 @@ textarea,
 
     .about-me-block {
         flex-direction: column-reverse;
+        gap: 2rem;
     }
 
     .about-me-block__desc {
         width: 100%;
-        margin-top: 4rem;
     }
 
     .footer-block {
         flex-direction: column-reverse;
+        gap: 2rem;
     }
 
     .footer-block-links,
     form {
         width: 100%;
-    }
-
-    .footer-block-links {
-        margin-top: 4rem;
     }
 
     .edu-work-brig-slider-item::after {
@@ -564,5 +561,4 @@ textarea,
     .pi3-modal-box-block {
         max-width: 90%;
     }
-
 }

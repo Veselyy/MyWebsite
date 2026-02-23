@@ -1,0 +1,25 @@
+{
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/typescript"
+    ],
+    "plugins": ["@typescript-eslint", "jest", "prettier"],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "no-console": "off",
+        "import/no-anonymous-default-export": "off",
+        "prettier/prettier": "warn",
+        "no-debugger": "error",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "no-duplicate-imports": "error",
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "parent", "sibling", "index"],
+                "newlines-between": "always"
+            }
+        ]
+    }
+}

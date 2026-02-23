@@ -1,15 +1,16 @@
-import {
-    useEffect,
-    useState,
-    type MouseEvent as ReactMouseEvent,
-} from "react";
-import { navSections } from "../config/navSections";
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useEffect, useState, type MouseEvent as ReactMouseEvent } from 'react';
+import { navSections } from '../config/navSections';
+import { ICON_SIZE } from '../config/constants';
+import { useTheme, useMediaQuery } from '@mui/material';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
-type NavClickHandler = (
-    e: ReactMouseEvent<HTMLAnchorElement>,
-    href: string,
-) => void;
+type NavClickHandler = (e: ReactMouseEvent<HTMLAnchorElement>, href: string) => void;
 
 type NavLinksProps = {
     onNavClick: NavClickHandler;
@@ -18,17 +19,20 @@ type NavLinksProps = {
 
 const NavLinks = ({ onNavClick, isMobile }: NavLinksProps) => {
     return (
-        <ul className={"navbar-block__menu " + (isMobile ? "navbar-mobile__menu" : "navbar-desktop__menu")}>
-            {navSections.map((s) => (
-                <li key={s.id}>
-                    <a
-                        href={s.href}
-                        onClick={(e) => onNavClick(e, s.href)}
-                    >
-                        <span className="nav-icon">
-                            <i className={s.iconClass} />
-                        </span>
-                        <span className="nav-text">{s.label}</span>
+        <ul
+            className={
+                'navbar-block__menu ' + (isMobile ? 'navbar-mobile__menu' : 'navbar-desktop__menu')
+            }
+        >
+            {navSections.map((section) => (
+                <li key={section.id}>
+                    <a href={section.href} onClick={(e) => onNavClick(e, section.href)}>
+                        <div className="nav-link-content">
+                            <span className="nav-icon">
+                                <section.icon sx={{ fontSize: ICON_SIZE }} />
+                            </span>
+                            <span>{section.label}</span>
+                        </div>
                     </a>
                 </li>
             ))}
@@ -42,7 +46,7 @@ const Navbar = () => {
 
     // Dark mode
     useEffect(() => {
-        document.body.classList.toggle("dark-mode", darkMode);
+        document.body.classList.toggle('dark-mode', darkMode);
     }, [darkMode]);
 
     const handleToggleTheme = () => setDarkMode((prev) => !prev);
@@ -51,50 +55,42 @@ const Navbar = () => {
 
     const handleNavClick: NavClickHandler = (e, href) => {
         e.preventDefault();
-        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
         setIsMenuOpen(false);
     };
 
     const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <nav className="navbar">
             <div className="container">
                 <div className="navbar-block">
-
-                    {(isSmallScreen && isMenuOpen) ? (
-                            <div className="navbar-mobile__overlay" onClick={handleClose}>
-                                <NavLinks onNavClick={handleNavClick} isMobile />
-                            </div>
+                    {isSmallScreen && isMenuOpen ? (
+                        <div className="navbar-mobile__overlay" onClick={handleClose}>
+                            <NavLinks onNavClick={handleNavClick} isMobile />
+                        </div>
                     ) : (
                         <>
                             {/* Dark Mode Button */}
                             <button id="toggle-theme" onClick={handleToggleTheme}>
-                                <i
-                                    className={
-                                        darkMode
-                                            ? "fa-regular fa-sun fa-lg"
-                                            : "fa-regular fa-moon fa-lg"
-                                    }
-                                />
+                                {darkMode ? (
+                                    <LightModeIcon sx={{ fontSize: ICON_SIZE }} />
+                                ) : (
+                                    <DarkModeIcon sx={{ fontSize: ICON_SIZE }} />
+                                )}
                             </button>
                             <NavLinks onNavClick={handleNavClick} />
                         </>
                     )}
 
                     {/* HAMBURGER (jen mobil – řeší CSS) */}
-                    <button
-                        className="navbar-burger"
-                        onClick={handleBurgerClick}
-                    >
-                        <i
-                            className={
-                                isMenuOpen
-                                    ? "fa-solid fa-xmark fa-lg"
-                                    : "fa-solid fa-bars fa-lg"
-                            }
-                        />
+                    <button className="navbar-burger" onClick={handleBurgerClick}>
+                        {isMenuOpen ? (
+                            <CloseIcon sx={{ fontSize: ICON_SIZE }} />
+                        ) : (
+                            <MenuIcon sx={{ fontSize: ICON_SIZE }} />
+                        )}
                     </button>
 
                     {/* Social Icons */}
@@ -105,15 +101,15 @@ const Navbar = () => {
                             className="social-icon"
                             rel="noreferrer"
                         >
-                            <i className="fa-brands fa-github fa-lg" />
+                            <GitHubIcon sx={{ fontSize: ICON_SIZE }} />
                         </a>
                         <a
                             target="_blank"
-                            href="https://www.instagram.com/imthemartas/"
+                            href="https://www.linkedin.com/in/veselymartin-online"
                             className="social-icon"
                             rel="noreferrer"
                         >
-                            <i className="fa-brands fa-instagram fa-lg" />
+                            <LinkedInIcon sx={{ fontSize: ICON_SIZE }} />
                         </a>
                         <a
                             target="_blank"
@@ -121,7 +117,7 @@ const Navbar = () => {
                             className="social-icon"
                             rel="noreferrer"
                         >
-                            <i className="fa-brands fa-facebook fa-lg" />
+                            <FacebookIcon sx={{ fontSize: ICON_SIZE }} />
                         </a>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import type { ModalId } from "../App";
+import type { ModalId } from '../App';
 
 interface Props {
     onOpenModal: (id: ModalId) => void;
@@ -13,7 +13,7 @@ const EduWorkBrigSection: React.FC<Props> = ({ onOpenModal }) => {
                     <div
                         className="edu-work-brig-slider-item"
                         id="hs"
-                        onClick={() => onOpenModal("hs")}
+                        onClick={() => onOpenModal('hs')}
                     >
                         <h3 className="edu-work-brig-slider-item__title">Střední škola</h3>
                         <p className="edu-work-brig-slider-item__date">2020 - 2024</p>
@@ -21,7 +21,7 @@ const EduWorkBrigSection: React.FC<Props> = ({ onOpenModal }) => {
                     <div
                         className="edu-work-brig-slider-item"
                         id="college"
-                        onClick={() => onOpenModal("college")}
+                        onClick={() => onOpenModal('college')}
                     >
                         <h3 className="edu-work-brig-slider-item__title">Vysoká škola</h3>
                         <p className="edu-work-brig-slider-item__date">2024...</p>
@@ -29,7 +29,7 @@ const EduWorkBrigSection: React.FC<Props> = ({ onOpenModal }) => {
                     <div
                         className="edu-work-brig-slider-item"
                         id="brigade"
-                        onClick={() => onOpenModal("commity")}
+                        onClick={() => onOpenModal('commity')}
                     >
                         <h3 className="edu-work-brig-slider-item__title">Brigáda u Commity</h3>
                         <p className="edu-work-brig-slider-item__date">01.06.2024 - 10.09.2024</p>

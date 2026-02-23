@@ -1,3 +1,9 @@
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import PeopleIcon from '@mui/icons-material/People';
+import CodeIcon from '@mui/icons-material/Code';
+import { ICON_SIZE } from '../config/constants';
+
 const AboutMeSection = () => {
     return (
         <section id="about-me">
@@ -5,18 +11,19 @@ const AboutMeSection = () => {
                 <h2 className="about-me__title">O mně</h2>
                 <div className="about-me-block">
                     <p className="about-me-block__desc">
-                        Zdravím, já jsem Martin, jsem z venkova a věnuji se <strong>IT</strong> 💻 už 4 rokem.
+                        Zdravím, já jsem Martin, jsem z venkova a věnuji se <strong>IT</strong> 💻
+                        už 4 rokem.
                         <br />
                         <br />
-                        Jsem <strong>student,</strong> rád dělám <strong>sporty</strong> 🏃‍♂️ a rád se bavím s lidmi,
-                        kteří mi mají <strong>co předat</strong>.
+                        Jsem <strong>student,</strong> rád dělám <strong>sporty</strong> 🏃‍♂️ a rád se
+                        bavím s lidmi, kteří mi mají <strong>co předat</strong>.
                         <br />
                         <br />
-                        Můj silný zájem o <strong>učení</strong> a <strong>osobní rozvoj</strong> mě motivuje využívat
-                        každou příležitost ke <strong>kariérnímu růstu</strong>.
+                        Můj silný zájem o <strong>učení</strong> a <strong>osobní rozvoj</strong> mě
+                        motivuje využívat každou příležitost ke <strong>kariérnímu růstu</strong>.
                         <br />
                         <br />
-                        Jsem připraven <strong>čelit</strong> novým výzvám a přispět ke společnému{" "}
+                        Jsem připraven <strong>čelit</strong> novým výzvám a přispět ke společnému{' '}
                         <strong>úspěchu</strong>.
                     </p>
                     <img
@@ -57,27 +64,44 @@ const AboutMeSection = () => {
                 <h3 className="hobbies__title">Koníčky</h3>
                 <div className="hobbies-block">
                     <div className="hobbies-card">
-                        <div className="hobbies-card__text">
-                            <h4>Sport</h4>
-                            <p>Jakýkoliv sport, který mě udržuje aktivním a fit.</p>
+                        <div className="hobbies-card__content">
+                            <DirectionsRunIcon sx={{ fontSize: ICON_SIZE }} />
+                            <div>
+                                <h4>Sport</h4>
+                                <p>Jakýkoliv sport, který mě udržuje aktivním a fit.</p>
+                            </div>
                         </div>
                     </div>
                     <div className="hobbies-card">
-                        <div className="hobbies-card__text">
-                            <h4>Učení nových věcí</h4>
-                            <p>Rád se učím nové technologie, dovednosti a rozšiřuji své znalosti.</p>
+                        <div className="hobbies-card__content">
+                            <LocalLibraryIcon sx={{ fontSize: ICON_SIZE }} />
+                            <div>
+                                <h4>Učení nových věcí</h4>
+                                <p>
+                                    Rád se učím nové technologie, dovednosti a rozšiřuji své
+                                    znalosti.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="hobbies-card">
-                        <div className="hobbies-card__text">
-                            <h4>Komunikace</h4>
-                            <p>Komunikace s lidmi s podobným zájmem mě inspiruje a motivuje.</p>
+                        <div className="hobbies-card__content">
+                            <PeopleIcon sx={{ fontSize: ICON_SIZE }} />
+                            <div>
+                                <h4>Komunikace</h4>
+                                <p>Komunikace s lidmi s podobným zájmem mě inspiruje a motivuje.</p>
+                            </div>
                         </div>
                     </div>
                     <div className="hobbies-card">
-                        <div className="hobbies-card__text">
-                            <h4>Programování</h4>
-                            <p>Věnuji se programování aplikací a hledání inovativních řešení.</p>
+                        <div className="hobbies-card__content">
+                            <CodeIcon sx={{ fontSize: ICON_SIZE }} />
+                            <div>
+                                <h4>Programování</h4>
+                                <p>
+                                    Věnuji se programování aplikací a hledání inovativních řešení.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

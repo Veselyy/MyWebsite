@@ -1,4 +1,5 @@
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
+import ContactSection from './ContactSection';
 
 const FooterSection = () => {
     const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
@@ -8,15 +9,15 @@ const FooterSection = () => {
         const formData = new FormData(form);
 
         try {
-            await fetch("/", {
-                method: "POST",
+            await fetch('/', {
+                method: 'POST',
                 body: formData,
             });
 
-            Swal.fire("Díky! Zpráva byla odeslána.");
+            Swal.fire('Díky! Zpráva byla odeslána.');
             form.reset();
-        } catch (error) {
-            Swal.fire("Nepodařilo se odeslat zprávu.");
+        } catch {
+            Swal.fire('Nepodařilo se odeslat zprávu.');
         }
     };
 
@@ -25,7 +26,7 @@ const FooterSection = () => {
             <div className="container">
                 <h2 className="footer__title">Kontakt na mě</h2>
                 <div className="footer-block">
-                    {/* ... kontakty */}
+                    <ContactSection />
                     <form
                         name="contact"
                         method="POST"
