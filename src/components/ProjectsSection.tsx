@@ -1,15 +1,15 @@
 import type { ModalId } from '../App';
 import CircleIcon from '@mui/icons-material/Circle';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { ICON_SIZE } from '../config/constants';
 
 interface Props {
     onOpenModal: (id: ModalId) => void;
+    darkMode: boolean;
 }
 
-const ProjectsSection: React.FC<Props> = ({ onOpenModal }) => {
+const ProjectsSection: React.FC<Props> = ({ onOpenModal, darkMode }) => {
     return (
         <section id="projects">
             <div className="container">
@@ -31,19 +31,21 @@ const ProjectsSection: React.FC<Props> = ({ onOpenModal }) => {
                                 <GitHubIcon sx={{ fontSize: ICON_SIZE }} />
                                 Odkaz na GitHub
                             </a>
-                            <a
-                                className="picture-link"
-                                onClick={() => onOpenModal('pi1')}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    padding: 0,
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
-                                Zobrazit obrázek
-                            </a>
+                            {!darkMode && (
+                                <a
+                                    className="picture-link"
+                                    onClick={() => onOpenModal('pi1')}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        padding: 0,
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
+                                    Zobrazit náhled
+                                </a>
+                            )}
                         </div>
                         <p className="project-card__desc">
                             - Tato webová aplikace slouží ke sledování denních návyků. <br />
@@ -71,28 +73,21 @@ const ProjectsSection: React.FC<Props> = ({ onOpenModal }) => {
                                 <GitHubIcon sx={{ fontSize: ICON_SIZE }} />
                                 Odkaz na GitHub
                             </a>
-                            <a
-                                className="page-link"
-                                target="_blank"
-                                href="https://myslenkovemapy.netlify.app"
-                                rel="noreferrer"
-                            >
-                                <OpenInNewIcon sx={{ fontSize: ICON_SIZE }} />
-                                Přejít na stránku
-                            </a>
-                            <a
-                                className="picture-link"
-                                onClick={() => onOpenModal('pi2')}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    padding: 0,
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
-                                Zobrazit obrázek
-                            </a>
+                            {!darkMode && (
+                                <a
+                                    className="picture-link"
+                                    onClick={() => onOpenModal('pi2')}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        padding: 0,
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
+                                    Zobrazit náhled
+                                </a>
+                            )}
                         </div>
                         <p className="project-card__desc">
                             - Tato stránka se věnuje myšlenkovým mapám jako efektivnímu nástroji pro
@@ -121,28 +116,21 @@ const ProjectsSection: React.FC<Props> = ({ onOpenModal }) => {
                                 <GitHubIcon sx={{ fontSize: ICON_SIZE }} />
                                 Odkaz na GitHub
                             </a>
-                            <a
-                                className="page-link"
-                                target="_blank"
-                                href="https://veselyy.github.io/Kolobezky/src/"
-                                rel="noreferrer"
-                            >
-                                <OpenInNewIcon sx={{ fontSize: ICON_SIZE }} />
-                                Přejít na stránku
-                            </a>
-                            <a
-                                className="picture-link"
-                                onClick={() => onOpenModal('pi3')}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    padding: 0,
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
-                                Zobrazit obrázek
-                            </a>
+                            {!darkMode && (
+                                <a
+                                    className="picture-link"
+                                    onClick={() => onOpenModal('pi3')}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        padding: 0,
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
+                                    Zobrazit náhled
+                                </a>
+                            )}
                         </div>
                         <p className="project-card__desc">
                             - Stránka představuje online katalog elektro-koloběžek. <br />
@@ -169,28 +157,21 @@ const ProjectsSection: React.FC<Props> = ({ onOpenModal }) => {
                                 <GitHubIcon sx={{ fontSize: ICON_SIZE }} />
                                 Odkaz na GitHub
                             </a>
-                            <a
-                                className="page-link"
-                                target="_blank"
-                                href="https://veselyy.github.io/HouseFix_Build/src/"
-                                rel="noreferrer"
-                            >
-                                <OpenInNewIcon sx={{ fontSize: ICON_SIZE }} />
-                                Přejít na stránku
-                            </a>
-                            <a
-                                className="picture-link"
-                                onClick={() => onOpenModal('pi4')}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    padding: 0,
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
-                                Zobrazit obrázek
-                            </a>
+                            {!darkMode && (
+                                <a
+                                    className="picture-link"
+                                    onClick={() => onOpenModal('pi4')}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        padding: 0,
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    <VisibilityIcon sx={{ fontSize: ICON_SIZE }} />
+                                    Zobrazit náhled
+                                </a>
+                            )}
                         </div>
                         <p className="project-card__desc">
                             - Stránka představuje službu HouseFix zaměřenou na kompletní renovace
