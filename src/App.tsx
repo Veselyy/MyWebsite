@@ -10,6 +10,11 @@ export type ModalId = 'hs' | 'college' | 'commity' | 'pi1' | 'pi2' | 'pi3' | 'pi
 
 const App = () => {
     const [activeModal, setActiveModal] = useState<ModalId>(null);
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        document.body.classList.toggle('dark-mode', darkMode);
+    }, [darkMode]);
 
     // blokace scrollu
     useEffect(() => {
@@ -25,10 +30,10 @@ const App = () => {
 
     return (
         <main>
-            <Navbar />
+            <Navbar darkMode={darkMode} onToggleTheme={() => setDarkMode((prev) => !prev)} />
             <AboutMeSection />
             <EduWorkBrigSection onOpenModal={handleOpenModal} />
-            <ProjectsSection onOpenModal={handleOpenModal} />
+            <ProjectsSection onOpenModal={handleOpenModal} darkMode={darkMode} />
             <Footer />
             <Modals activeModal={activeModal} onClose={handleCloseModal} />
         </main>

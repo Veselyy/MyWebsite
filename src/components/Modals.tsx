@@ -1,13 +1,56 @@
+import { useState } from 'react';
 import type { ModalId } from '../App';
 
+import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import CircularProgress from '@mui/material/CircularProgress';
 import { ICON_SIZE } from '../config/constants';
 
 interface ModalsProps {
     activeModal: ModalId;
     onClose: () => void;
 }
+const PROJECT_PREVIEW_URLS: Record<'pi1' | 'pi2' | 'pi3' | 'pi4', string> = {
+    pi1: '',
+    pi2: 'https://myslenkovemapy.netlify.app',
+    pi3: 'https://veselyy.github.io/Kolobezky/src/',
+    pi4: 'https://veselyy.github.io/HouseFix_Build/src/',
+};
+
+const PROJECT_TITLES: Record<'pi1' | 'pi2' | 'pi3' | 'pi4', string> = {
+    pi1: 'Náhled projektu 1',
+    pi2: 'Náhled projektu 2 – Myšlenkové mapy',
+    pi3: 'Náhled projektu 3 – Koloběžky',
+    pi4: 'Náhled projektu 4 – HouseFix',
+};
+
+const isProjectModal = (id: ModalId): id is 'pi1' | 'pi2' | 'pi3' | 'pi4' =>
+    id === 'pi1' || id === 'pi2' || id === 'pi3' || id === 'pi4';
+
+type ProjectPreviewId = 'pi1' | 'pi2' | 'pi3' | 'pi4';
+
+const ProjectPreviewIframe: React.FC<{ projectId: ProjectPreviewId }> = ({ projectId }) => {
+    const [loading, setLoading] = useState(true);
+    return (
+        <>
+            {loading && (
+                <div className="modal-iframe-spinner" aria-hidden="true">
+                    <CircularProgress />
+                </div>
+            )}
+            <iframe
+                className="modal-iframe"
+                title={PROJECT_TITLES[projectId]}
+                src={PROJECT_PREVIEW_URLS[projectId]}
+                onLoad={() => setLoading(false)}
+            />
+        </>
+    );
+};
+
 const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
+    const projectPreviewId = isProjectModal(activeModal) ? activeModal : null;
+
     const handleOverlayClick = () => {
         onClose();
     };
@@ -18,54 +61,36 @@ const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
 
     return (
         <>
-            {/* Náhledy projektů */}
+            {/* Náhledy projektů – jeden modal, jeden iframe (načte se až po otevření, po zavření se odpojí) */}
             <div
-                className={`modal ${activeModal === 'pi1' ? 'modal-active' : ''}`}
-                id="pi1-modal-box"
+                className={`modal ${projectPreviewId ? 'modal-active' : ''}`}
+                id="project-preview-modal"
                 onClick={handleOverlayClick}
             >
-                <img
-                    className="pi1-modal-box-block"
-                    src="/images/img-project1.png"
-                    alt="Náhled projektu 1"
-                    onClick={(e) => e.stopPropagation()}
-                />
-            </div>
-            <div
-                className={`modal ${activeModal === 'pi2' ? 'modal-active' : ''}`}
-                id="pi2-modal-box"
-                onClick={handleOverlayClick}
-            >
-                <img
-                    className="pi2-modal-box-block"
-                    src="/images/img-project2.png"
-                    alt="Náhled projektu 2"
-                    onClick={(e) => e.stopPropagation()}
-                />
-            </div>
-            <div
-                className={`modal ${activeModal === 'pi3' ? 'modal-active' : ''}`}
-                id="pi3-modal-box"
-                onClick={handleOverlayClick}
-            >
-                <img
-                    className="pi3-modal-box-block"
-                    src="/images/img-project3.png"
-                    alt="Náhled projektu 3"
-                    onClick={(e) => e.stopPropagation()}
-                />
-            </div>
-            <div
-                className={`modal ${activeModal === 'pi4' ? 'modal-active' : ''}`}
-                id="pi4-modal-box"
-                onClick={handleOverlayClick}
-            >
-                <img
-                    className="pi4-modal-box-block"
-                    src="/images/img-project4.png"
-                    alt="Náhled projektu 4"
-                    onClick={(e) => e.stopPropagation()}
-                />
+                {projectPreviewId && (
+                    <>
+                        <button
+                            type="button"
+                            className="modal-preview-close"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onClose();
+                            }}
+                            aria-label="Zavřít náhled"
+                        >
+                            <CloseIcon sx={{ fontSize: ICON_SIZE }} />
+                        </button>
+                        <div
+                            className="project-preview-content"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <ProjectPreviewIframe
+                                key={projectPreviewId}
+                                projectId={projectPreviewId}
+                            />
+                        </div>
+                    </>
+                )}
             </div>
 
             {/* Modaly pro školu / VUT / Commity */}

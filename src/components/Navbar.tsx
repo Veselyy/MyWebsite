@@ -1,4 +1,4 @@
-import { useEffect, useState, type MouseEvent as ReactMouseEvent } from 'react';
+import { useState, type MouseEvent as ReactMouseEvent } from 'react';
 import { navSections } from '../config/navSections';
 import { ICON_SIZE } from '../config/constants';
 import { useTheme, useMediaQuery } from '@mui/material';
@@ -40,16 +40,13 @@ const NavLinks = ({ onNavClick, isMobile }: NavLinksProps) => {
     );
 };
 
-const Navbar = () => {
-    const [darkMode, setDarkMode] = useState(false);
+type NavbarProps = {
+    darkMode: boolean;
+    onToggleTheme: () => void;
+};
+
+const Navbar = ({ darkMode, onToggleTheme }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    // Dark mode
-    useEffect(() => {
-        document.body.classList.toggle('dark-mode', darkMode);
-    }, [darkMode]);
-
-    const handleToggleTheme = () => setDarkMode((prev) => !prev);
     const handleBurgerClick = () => setIsMenuOpen((prev) => !prev);
     const handleClose = () => setIsMenuOpen(false);
 
@@ -73,7 +70,7 @@ const Navbar = () => {
                     ) : (
                         <>
                             {/* Dark Mode Button */}
-                            <button id="toggle-theme" onClick={handleToggleTheme}>
+                            <button id="toggle-theme" onClick={onToggleTheme}>
                                 {darkMode ? (
                                     <LightModeIcon sx={{ fontSize: ICON_SIZE }} />
                                 ) : (
