@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { ModalId } from '../App';
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -27,14 +27,29 @@ const PROJECT_TITLES: Record<'pi1' | 'pi2' | 'pi3' | 'pi4', string> = {
 const isProjectModal = (id: ModalId): id is 'pi1' | 'pi2' | 'pi3' | 'pi4' =>
     id === 'pi1' || id === 'pi2' || id === 'pi3' || id === 'pi4';
 
+type ProjectPreviewId = 'pi1' | 'pi2' | 'pi3' | 'pi4';
+
+const ProjectPreviewIframe: React.FC<{ projectId: ProjectPreviewId }> = ({ projectId }) => {
+    const [loading, setLoading] = useState(true);
+    return (
+        <>
+            {loading && (
+                <div className="modal-iframe-spinner" aria-hidden="true">
+                    <CircularProgress />
+                </div>
+            )}
+            <iframe
+                className="modal-iframe"
+                title={PROJECT_TITLES[projectId]}
+                src={PROJECT_PREVIEW_URLS[projectId]}
+                onLoad={() => setLoading(false)}
+            />
+        </>
+    );
+};
+
 const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
-    const [iframeLoading, setIframeLoading] = useState(true);
-
     const projectPreviewId = isProjectModal(activeModal) ? activeModal : null;
-
-    useEffect(() => {
-        if (projectPreviewId) setIframeLoading(true);
-    }, [projectPreviewId]);
 
     const handleOverlayClick = () => {
         onClose();
@@ -69,17 +84,9 @@ const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                             className="project-preview-content"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {iframeLoading && (
-                                <div className="modal-iframe-spinner" aria-hidden="true">
-                                    <CircularProgress />
-                                </div>
-                            )}
-                            <iframe
+                            <ProjectPreviewIframe
                                 key={projectPreviewId}
-                                className="modal-iframe"
-                                title={PROJECT_TITLES[projectPreviewId]}
-                                src={PROJECT_PREVIEW_URLS[projectPreviewId]}
-                                onLoad={() => setIframeLoading(false)}
+                                projectId={projectPreviewId}
                             />
                         </div>
                     </>
