@@ -1,4 +1,5 @@
 import type { ModalId } from '../App';
+import Container from '@mui/material/Container';
 import CircleIcon from '@mui/icons-material/Circle';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -12,7 +13,7 @@ interface Props {
 const ProjectsSection: React.FC<Props> = ({ onOpenModal, darkMode }) => {
     return (
         <section id="projects">
-            <div className="container">
+            <Container>
                 <h2 className="projects__title">Projekty</h2>
                 <div className="projects-block">
                     <div className="project-card">
@@ -184,7 +185,7 @@ const ProjectsSection: React.FC<Props> = ({ onOpenModal, darkMode }) => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };

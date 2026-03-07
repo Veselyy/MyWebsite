@@ -2,12 +2,13 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import PeopleIcon from '@mui/icons-material/People';
 import CodeIcon from '@mui/icons-material/Code';
+import Container from '@mui/material/Container';
 import { ICON_SIZE } from '../config/constants';
 
 const AboutMeSection = () => {
     return (
         <section id="about-me">
-            <div className="container">
+            <Container>
                 <h2 className="about-me__title">O mně</h2>
                 <div className="about-me-block">
                     <p className="about-me-block__desc">
@@ -105,7 +106,7 @@ const AboutMeSection = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };
