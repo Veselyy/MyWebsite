@@ -17,7 +17,6 @@ body.dark-mode {
     font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
-    color: var(--black);
 }
 
 section,
@@ -32,12 +31,6 @@ main {
 
 h2 {
     margin-bottom: 1rem;
-}
-
-.container {
-    max-width: 1200px;
-    width: 95%;
-    margin: auto;
 }
 
 .navbar {
@@ -457,88 +450,6 @@ footer {
     padding-bottom: 4rem;
 }
 
-.footer-block {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-block-links {
-    width: 50%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.footer-block-links__text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.footer-contact-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.footer-block-links__socials {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-link {
-    text-decoration: none;
-    position: relative;
-}
-
-.footer-link::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    height: 1px;
-    width: 0;
-    background-color: var(--black);
-    transition: var(--transition);
-}
-
-.footer-link:hover::after {
-    width: 100%;
-    transition: var(--transition);
-}
-
-.footer-social-link {
-    display: inline-flex;
-    color: var(--black);
-    transition: var(--transition);
-}
-
-.footer-social-link:hover {
-    transform: scale(1.15);
-}
-
-form {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-input,
-textarea,
-#form-button {
-    width: 100%;
-    padding: 3px;
-    font-size: 14px;
-    color: black;
-    border: 1px solid black;
-}
-
-#form-button {
-    cursor: pointer;
-}
-
 @media screen and (max-width: 1000px) {
     .edu-work-brig-slider-item::after {
         width: 15%;
@@ -577,12 +488,6 @@ textarea,
         width: 100%;
     }
 
-    .footer-block {
-        flex-direction: column-reverse;
-        gap: 2rem;
-    }
-
-    .footer-block-links,
     form {
         width: 100%;
     }
