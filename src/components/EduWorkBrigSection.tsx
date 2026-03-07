@@ -1,4 +1,5 @@
 import type { ModalId } from '../App';
+import Container from '@mui/material/Container';
 
 interface Props {
     onOpenModal: (id: ModalId) => void;
@@ -7,7 +8,7 @@ interface Props {
 const EduWorkBrigSection: React.FC<Props> = ({ onOpenModal }) => {
     return (
         <section id="edu-work-brig">
-            <div className="container">
+            <Container>
                 <h2 className="edu-work-brig__title">Vzdělání, práce a brigády v IT</h2>
                 <div className="edu-work-brig-slider">
                     <div
@@ -35,7 +36,7 @@ const EduWorkBrigSection: React.FC<Props> = ({ onOpenModal }) => {
                         <p className="edu-work-brig-slider-item__date">01.06.2024 - 10.09.2024</p>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };

@@ -1,6 +1,7 @@
 import { useState, type MouseEvent as ReactMouseEvent } from 'react';
 import { navSections } from '../config/navSections';
 import { ICON_SIZE } from '../config/constants';
+import Container from '@mui/material/Container';
 import { useTheme, useMediaQuery } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -61,7 +62,7 @@ const Navbar = ({ darkMode, onToggleTheme }: NavbarProps) => {
 
     return (
         <nav className="navbar">
-            <div className="container">
+            <Container>
                 <div className="navbar-block">
                     {isSmallScreen && isMenuOpen ? (
                         <div className="navbar-mobile__overlay" onClick={handleClose}>
@@ -118,7 +119,7 @@ const Navbar = ({ darkMode, onToggleTheme }: NavbarProps) => {
                         </a>
                     </div>
                 </div>
-            </div>
+            </Container>
         </nav>
     );
 };
