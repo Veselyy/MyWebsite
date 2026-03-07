@@ -120,7 +120,9 @@ const NavLinks = ({ onNavClick, isMobile }: NavLinksProps) => {
                         href={section.href}
                         underline="none"
                         color="text.primary"
-                        onClick={(e) => onNavClick(e as ReactMouseEvent<HTMLAnchorElement>, section.href)}
+                        onClick={(e) =>
+                            onNavClick(e as ReactMouseEvent<HTMLAnchorElement>, section.href)
+                        }
                         sx={{ '&:hover': { color: 'text.primary' } }}
                     >
                         <Stack component="span" direction="row" sx={styles.linkContent}>
@@ -226,11 +228,7 @@ const Navbar = ({ darkMode, onToggleTheme }: NavbarProps) => {
                 </Stack>
             </Container>
 
-            <Drawer
-                anchor="top"
-                open={isSmallScreen && isMenuOpen}
-                onClose={handleClose}
-            >
+            <Drawer anchor="top" open={isSmallScreen && isMenuOpen} onClose={handleClose}>
                 <NavLinks onNavClick={handleNavClick} isMobile />
             </Drawer>
         </Box>
